@@ -18,12 +18,12 @@ var BAR_BOTTOMTEXT_Y = CLOUD_Y + CLOUD_HEIGHT - GAP * 1.5;
 var FONT = '16px PT Mono';
 var FONT_COLOR = '#000';
 
-var renderCloud = function(ctx, x, y, color) {
+var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
 };
 
-var getMaxElement = function(arr) {
+var getMaxElement = function (arr) {
   var maxElement = arr[0];
 
   for (var i = 0; i < arr.length; i++) {
@@ -73,7 +73,7 @@ window.renderStatistics = function (ctx, names, times) {
     }
 
     drawText(ctx, FONT_COLOR, Math.floor(times[i]), textCoorX, textCoorY);
-    drawBar(ctx, barColor, barCoorX, barCoorY, BAR_WIDTH, barHeight)
+    drawBar(ctx, barColor, barCoorX, barCoorY, BAR_WIDTH, barHeight);
     drawText(ctx, FONT_COLOR, names[i], textCoorX, BAR_BOTTOMTEXT_Y);
   }
 };
