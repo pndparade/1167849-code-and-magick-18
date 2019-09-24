@@ -7,7 +7,7 @@ var EYES_COLOR = ['black', 'red', 'blue', 'yellow', 'green'];
 
 document.querySelector('.setup').classList.remove('hidden');
 
-var createWizardsArray = function (size) {
+var createWizardsMocks = function (size) {
   var arr = [];
   for (var i = 0; i < size; i++) {
     arr[i] = {
@@ -20,7 +20,7 @@ var createWizardsArray = function (size) {
   return arr;
 };
 
-var wizards = createWizardsArray(4);
+var wizards = createWizardsMocks(4);
 
 var similarListElement = document.querySelector('.setup-similar-list');
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
