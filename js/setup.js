@@ -8,16 +8,16 @@ var EYES_COLOR = ['black', 'red', 'blue', 'yellow', 'green'];
 document.querySelector('.setup').classList.remove('hidden');
 
 var createWizardsMocks = function (size) {
-  var arr = [];
+  var mocks = [];
   for (var i = 0; i < size; i++) {
-    arr[i] = {
+    mocks[i] = {
       name: NAMES[Math.floor(Math.random() * NAMES.length)] + ' ' + SURNAMES[Math.floor(Math.random() * SURNAMES.length)],
       coatColor: COAT_COLOR[Math.floor(Math.random() * COAT_COLOR.length)],
       eyesColor: EYES_COLOR[Math.floor(Math.random() * EYES_COLOR.length)],
     };
   }
 
-  return arr;
+  return mocks;
 };
 
 var wizards = createWizardsMocks(4);
