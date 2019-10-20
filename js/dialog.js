@@ -11,7 +11,7 @@
   var resetDialogPosition = function () {
     setup.style.top = dialogOffsetTop + 'px';
     setup.style.left = dialogOffsetLeft + 'px';
-  }
+  };
 
   var onPopupEscPress = function (evt) {
     if (userNameInput !== document.activeElement) {
