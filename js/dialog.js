@@ -6,20 +6,30 @@
   var setupClose = setup.querySelector('.setup-close');
   var userNameInput = setup.querySelector('.setup-user-name');
   var dialogHandle = setup.querySelector('.upload');
+  var dialogOffsetLeft, dialogOffsetTop;
+
+  var resetDialogPosition = function () {
+    setup.style.top = dialogOffsetTop + 'px';
+    setup.style.left = dialogOffsetLeft + 'px';
+  }
 
   var onPopupEscPress = function (evt) {
     if (userNameInput !== document.activeElement) {
       window.util.isEscPress(evt, closePopup);
+      resetDialogPosition();
     }
   };
 
   var openPopup = function () {
     setup.classList.remove('hidden');
+    dialogOffsetLeft = setup.offsetLeft;
+    dialogOffsetTop = setup.offsetTop;
     document.addEventListener('keydown', onPopupEscPress);
   };
 
   var closePopup = function () {
     setup.classList.add('hidden');
+    resetDialogPosition();
     document.removeEventListener('keydown', onPopupEscPress);
   };
 
