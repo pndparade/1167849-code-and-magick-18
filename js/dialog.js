@@ -6,7 +6,8 @@
   var setupClose = setup.querySelector('.setup-close');
   var userNameInput = setup.querySelector('.setup-user-name');
   var dialogHandle = setup.querySelector('.upload');
-  var dialogOffsetLeft, dialogOffsetTop;
+  var dialogOffsetLeft;
+  var dialogOffsetTop;
 
   var resetDialogPosition = function () {
     setup.style.top = dialogOffsetTop + 'px';
@@ -83,8 +84,8 @@
       document.removeEventListener('mouseup', onMouseUp);
 
       if (dragged) {
-        var onClickPreventDefault = function (evt) {
-          evt.preventDefault();
+        var onClickPreventDefault = function (clickEvt) {
+          clickEvt.preventDefault();
           dialogHandle.removeEventListener('click', onClickPreventDefault);
         };
         dialogHandle.addEventListener('click', onClickPreventDefault);
